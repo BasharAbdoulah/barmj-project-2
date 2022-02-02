@@ -1,0 +1,577 @@
+/*-------------------١--------------------------*/
+/*                  ملحوظات                     */
+/*
+ملحوظة عامة:لقد  تركت لكم تعليقات لتساعدك علي تنظيم الملف بالشكل المثالي
+تأكد من أن آخر جزء هو الجزء الحاوي لكل ما هو متعلق بشكل الصفحة على الهواتف والتابلت
+إذا كان لديك أي سؤال من فضلك إرسل لي الكود وشرح المشكلة علي البريد الالكتروني
+tony@barmej.com
+*/
+/*----------------------------------------------*/
+
+
+
+/*----------------------١-----------------------*/
+/*
+Fonts & Font-faces سنقوم بوضع جميع الخطوط التي سنحتاجها هنا
+ملحوظة: إسم الخط هو إما
+Avenir Next 
+أو إن لم تجده فيمكنك استعمال خط 
+Lato
+*/
+/*---------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700;900&family=Kumbh+Sans:wght@300;400;500;700&family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@100&family=Open+Sans:wght@300;400;600;700&family=Rubik:ital,wght@0,700;1,800&family=Yanone+Kaffeesatz:wght@300;500;600;700&display=swap');
+/*----------------------٢-----------------------*/
+/*                  DEFAULTS                    */
+/*
+يجب عليك هنا وضع أي من الأنماط العامة الخاصة بوسوم مثل
+html, body, h1, h2, p 
+وهي الأنماط التي تنطبق على الموقع بشكل عام وكل صفحاته وليس على عنصر معين في صفحة معينة
+*/
+/*----------------------------------------------*/
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #ffff;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+/*----------------------٣-----------------------*/
+/*               HELPER CLASSES                 */
+/*
+يجب عليك هنا وضع أي من الأنماط الخاصة بال
+classes
+التي ستقوم بإعادة إستخدامها في أكثر من مكان خلال عملك على الموقع 
+على سبيل المثال: النمط الخاص بالزر الأزرق الذي يستعمله المصمم في كل الصفحات تقريباً
+*/
+/*----------------------------------------------*/
+
+.hidden {
+    display: none !important;
+}
+.is-active {
+    display: block !important;
+}
+:root {
+    --main-color: #2B292D;
+    --second-color: #3040C4;
+}
+.hero .hero__desc h1, 
+.actions h2 {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 45px;
+}
+.is-primary, 
+.actions a {
+    width: 234px;
+    height: 64px;
+    background-color: var(--second-color);
+    display: inline-block;
+    text-align: center;
+    line-height: 64px;
+    margin-top: 45px;
+    border-radius: 34px;
+    color: #ffff;
+    border: none;
+    cursor: pointer;
+}
+.widgets .widget .widget__desc p, 
+.stories .heading-paragraph,
+footer .copyrights,
+.footer-nav .item a {
+    font-size: 14px;
+    color: var(--main-color);
+    line-height: 22px;
+    font-weight: 300;
+}
+.stories h2, 
+.howItWorks h2 {
+    font-size: 36px;
+}
+/*----------------------٤-----------------------*/
+/*                    LAYOUT                    */
+/*                البناء العام للصفحة           */
+/*----------------------------------------------*/
+
+.container {
+    width: 85%;
+    margin: auto;
+    position: relative;
+}
+.page {
+    max-width: 100%;
+    overflow: hidden;
+}
+/*----------------------٥-----------------------*/
+/*                    HEADER                    */
+/*----------------------------------------------*/
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px auto;
+    padding: 15px;
+    border-bottom: 1px solid #dddd;
+}
+.main-nav ul {
+    display: flex;
+    column-gap: 30px;
+}
+.main-nav ul li a {
+    font-size: 17px;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+}
+.main-nav ul li {
+    position: relative;
+    text-align: center;
+}
+.main-nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--second-color);
+    left: 50%;
+    bottom: -23px;
+    transition: all 0.3s ease;
+}
+.main-nav ul li:hover a::before, 
+.main-nav ul li a:hover {
+    width: 100%;
+    left: 0%;
+    color: var(--second-color);
+}
+/*----------------------٦-----------------------*/
+/*                     HERO                     */
+/*----------------------------------------------*/
+.hero {
+    margin: 147px 0;
+}
+.hero .container {
+    display: flex;
+}
+.hero .hero__image {
+    width: 65%;
+}
+.hero .hero__image img {
+    width: 100%;
+}
+.hero__desc {
+    width: 35%;
+    margin-top: 30px;
+}
+
+.hero__desc p {
+    font-size: 16px;
+    line-height: 29px;
+    font-weight: 300;
+    padding: 0 115px 0 0;
+    color: var(--main-color);
+}
+/*----------------------٧-----------------------*/
+/*              MEET YOUR MATCH                 */
+/*----------------------------------------------*/
+
+.meetYourMatch__background  {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    background-color: #EEF0FC;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+}
+.meetYourMatchــcontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.meetYourMatchــcontent h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+.meetYourMatchــcontent .switcher {
+    text-align: center;
+    position: relative;
+}
+.meetYourMatchــcontent .switcher label {
+    position: relative;
+}
+.meetYourMatchــcontent .switcher label:first-child img {
+    margin-right: 50px;
+}
+.meetYourMatchــcontent .switcher label > img {
+    width: 55px;
+}
+.meetYourMatchــcontent .switcher #dog {
+    position: absolute;
+    z-index: -1;
+    left: 25%;
+    top: -20%;
+}
+.meetYourMatchــcontent .switcher #cat {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 0%;
+}
+.meetYourMatchــcontent .switcher img {
+    cursor: pointer;
+}
+.meetYourMatchــcontent .switcher span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.meetYourMatchــform .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto;
+    position: relative;
+    width: fit-content;
+}
+.meetYourMatchــform .form-group button {
+    width: 150px;
+    height: 51px;
+    line-height: 50px;
+    position: relative;
+    left: -25px;
+    margin: 0;
+}
+.meetYourMatchــform .form-group::before {
+    content:url(/images/map-pin.png);
+    position: absolute;
+    left: 40px;
+    z-index: 33;
+}
+.meetYourMatchــform .form-group input {
+    max-height: 50px;
+    height: 19px;
+    padding: 15px 15px 15px 45px;
+    border-radius: 34px;
+    border: none;
+    width: 270px;
+    position: relative;
+    left: 25px;
+    border: 1px solid var(--second-color);
+    color: var(--second-color);
+}
+.widgets {
+    display: flex;
+    margin: 155px auto;
+    width: 85%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+.widgets .widget .widget__image img {
+    width: 100%;
+}
+.is-searchResults .widget {
+    flex-basis: 22%;
+    background-color: #ffff;
+    box-shadow: 0 0 20px 1px #00000029;
+    transition: all .3s ease-in-out;
+}
+.is-searchResults .widget:hover {
+    transform: scale(1.03);
+}
+.is-searchResults .widget .widget__desc {
+    padding: 5px 15px 15px;
+}
+.widgets .widget .widget__desc h4 {
+    margin: 10px 0;
+}
+
+.is-searchResults .widget .widget__desc p {
+    margin: 0;
+}
+/*----------------------٨-----------------------*/
+/*               HOW IT WORKS                   */
+/*----------------------------------------------*/
+
+.howItWorks {
+    margin: 140px 0;
+    text-align: center;
+}
+.howItWorks .is-howItWorks {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 65px;
+}
+.howItWorks .is-howItWorks .widget {
+    flex-basis: 30%;
+    background-color: transparent;
+    transition: all 0.3s ease-in;
+}
+/*----------------------٩-----------------------*/
+/*                 STORIES                      */
+/*----------------------------------------------*/
+.stories {
+    background-color: #F6F6F9;
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.stories .widgets {
+    margin: 50px auto;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+.stories .widgets .widget{
+    flex-basis: 32%;
+}
+.stories .widgets .widget__desc h3 {
+    margin: 15px 0 10px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+}
+.stories .widget__desc {
+    text-align: left;
+}
+.stories .widget__desc a {
+    font-size: 13px;
+}
+/*----------------------١٠----------------------*/
+/*       Actions: Change A Life, Adopt A Pet    */
+/*----------------------------------------------*/
+
+.actions {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    background-color: var(--second-color);
+    display: flex;
+}
+.actions h2 {
+    color: #ffff;
+    margin: 0;
+}
+.actions a.active {
+    background-color: #F6F6F9;
+    color: var(--second-color);
+}
+.actions .is-outline:hover {
+    background-color: #4354f1;
+}
+.actions a {
+    color: #F6F6F9;
+    border: 1px solid #F6F6F9;
+    margin-right: 10px;
+    width: 195px;
+    height: 57px;
+    line-height: 57px;
+    transition: all 0.3s ease;
+}
+/*---------------------١١-----------------------*/
+/*                    FOOTER                    */
+/*----------------------------------------------*/
+
+footer {
+    width: 100%;
+    height: 400px;
+}
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+footer .footer-nav {
+    display: flex;
+}
+footer .copyrights p:last-child a {
+    color: #000000;
+}
+footer .copyrights {
+    flex-basis: 20%;
+}
+footer .footer-nav {
+    flex: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer-nav .item a {
+    line-height: 27px;
+    transition: all 0.3s ease;
+}
+.footer-nav .item a:hover, 
+footer .copyrights p:last-child a:hover {
+    color: var(--second-color);
+} 
+
+
+
+/* Burger mopile */
+/* Burger mopile */
+/* Burger mopile */
+.burger {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    background-color: inherit;
+    border-radius: 4px;
+    border: none;
+    display: none;
+}
+.burger div:first-child {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8px;
+}
+.burger div:last-child {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 7px;
+}
+.burger div {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #2B292D;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.close-icon {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: 26px;
+    display: none;
+}
+/*----------------------١٢----------------------*/
+/*                    Responsive                */
+/*       كل ما هو متعلق بالهواتف والتابلت       */
+/*----------------------------------------------*/
+@media (max-width: 884px) {
+    .is-searchResults .widget {
+        flex-basis: 45%;
+    }
+    .howItWorks .is-howItWorks {
+        justify-content: center;
+    }
+    .howItWorks .is-howItWorks .widget {
+        flex-basis: 60%;
+    }
+    .stories .widgets .widget {
+        flex-basis: 46%;
+    }
+    .hero .hero__desc,
+    .hero__image {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    
+    .burger {
+        display: block;
+    }
+    header .main-nav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 222;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+    .main-nav ul {
+        column-gap: 30px;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        row-gap: 100px;
+    }
+    .container {
+        width: 90%;
+    }
+    header .container,
+    .howItWorks {
+        padding: 15px 0;
+        margin: 0 auto;
+    }
+    .hero {
+        margin: 85px 0 0;
+    }
+    .hero .hero__desc, 
+    .widgets{
+        width: 100%;
+    }
+    .widgets {
+        margin: 100px auto;
+    }
+    .hero .hero__image {
+        width: 111%;
+        position: relative;
+        left: -6%;
+    }
+    .hero .container {
+        flex-direction: column;
+    }
+    .meetYourMatch__background {
+        width: 111%;
+        left: -6%;
+    }
+    .stories .widgets .widget {
+        flex-basis: 100%;
+    }
+    .is-searchResults {
+        justify-content: center;
+    }
+    .is-searchResults .widget {
+        flex-basis: 85%;
+    }
+    .howItWorks .is-howItWorks .widget {
+        flex-basis: 70%;
+    }
+    .meetYourMatchــform .form-group input {
+        width: fit-content;
+    }
+    .actions {
+        height: 250px;
+    }
+    .actions a {
+        width: 150px;
+        height: 50px;
+        line-height: 50px;
+    }
+    .actions h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    footer {
+        padding: 50px 0 30px;
+    }
+    footer .footer-nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    footer .footer-nav .item {
+        flex-basis: 50%;
+    }
+    footer .container {
+        align-items: flex-start;
+        height: 100%;
+        flex-direction: column;
+    }
+}
